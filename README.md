@@ -42,6 +42,25 @@ npm run build    # production
 
 [Fjelstul World Cup Database](https://github.com/jfjelstul/worldcup) — men's tournaments, 1930–2022.
 
+## Verify the numbers yourself
+
+Every stat in the flipbook can be reproduced from the raw CSVs. `verify_worldcup_stories.py` runs all seven stories against the source data and prints ✓/✗ for each claim.
+
+**Requirements:** Python 3.8+ and `pandas` (`pip install pandas`).
+
+```bash
+# First time — auto-download the CSVs from jfjelstul/worldcup
+python verify_worldcup_stories.py --download
+
+# Run all 7 stories
+python verify_worldcup_stories.py
+
+# Run just one (K1, K2, K3, A1, A2, A3, A4)
+python verify_worldcup_stories.py --story A3
+```
+
+Each story prints its headline numbers (e.g. *Scorer win rate: 72.8%*), the supporting subgroup checks, and raw counts. A ✓ means the number matches the flipbook to within the tolerance noted in the script; a ✗ means the data disagrees — open an issue if you hit one.
+
 ## License
 
 MIT.
