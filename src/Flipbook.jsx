@@ -567,9 +567,18 @@ export default function Flipbook() {
   const [progress, setPr]   = useState(0);
   const [paused, setPaused] = useState(false);
   const [isMobile, setMob]  = useState(false);
+  const [musicOn, setMusicOn] = useState(false);
+  const audioRef = useRef(null);
   const rafRef   = useRef(null);
   const startRef = useRef(null);
   const total = PAGES.length;
+
+  const toggleMusic = useCallback(()=>{
+    const a = audioRef.current;
+    if (!a) return;
+    if (musicOn) { a.pause(); setMusicOn(false); }
+    else { a.play().then(()=>setMusicOn(true)).catch(()=>setMusicOn(false)); }
+  },[musicOn]);
 
   useEffect(()=>{
     const check=()=>setMob(window.innerWidth<580);
@@ -619,6 +628,7 @@ export default function Flipbook() {
 
   return (
     <div style={{ background:"#e5e7eb", minHeight:"100vh", display:"flex", alignItems:"center", justifyContent:"center", padding:isMobile?"8px":"20px" }}>
+      <audio ref={audioRef} src={`${import.meta.env.BASE_URL}anthem.mp3`} loop preload="none" />
       <style>{`
         *{box-sizing:border-box;margin:0;padding:0;}
         @keyframes flipIn{from{opacity:0;transform:perspective(900px) rotateY(-5deg) scale(0.98);}to{opacity:1;transform:perspective(900px) rotateY(0) scale(1);}}
@@ -692,6 +702,13 @@ export default function Flipbook() {
               <div style={{ height:"100%", width:`${progress*100}%`, background:spineColor, borderRadius:2, transition:"background 0.3s" }} />
             </div>
           </div>
+
+          <button onClick={toggleMusic} title={musicOn?"Mute":"Play anthem"} style={{
+            background:"#fff", border:"1px solid #d1d5db", color:musicOn?spineColor:"#6b7280",
+            width:36, height:36, borderRadius:4, cursor:"pointer", fontSize:14,
+            display:"flex", alignItems:"center", justifyContent:"center",
+            boxShadow:"0 1px 2px #0000000f", flexShrink:0
+          }}>{musicOn?"🔊":"🔇"}</button>
 
           <button onClick={()=>setPaused(p=>!p)} style={{
             background:"#fff", border:"1px solid #d1d5db", color:"#6b7280",
