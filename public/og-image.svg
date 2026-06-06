@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fffef9"/>
+
+  <!-- top masthead rules -->
+  <rect x="0" y="0" width="1200" height="10" fill="#1a1a1a"/>
+  <rect x="0" y="18" width="1200" height="2" fill="#1a1a1a"/>
+
+  <!-- faint pitch lines -->
+  <g stroke="#1a3a1a" stroke-width="1.5" fill="none" opacity="0.06">
+    <rect x="60" y="60" width="1080" height="510"/>
+    <line x1="600" y1="60" x2="600" y2="570"/>
+    <circle cx="600" cy="315" r="100"/>
+    <rect x="60" y="200" width="180" height="230"/>
+    <rect x="960" y="200" width="180" height="230"/>
+  </g>
+
+  <!-- eyebrow -->
+  <text x="600" y="80" text-anchor="middle" font-family="Times New Roman, Georgia, serif"
+        font-size="18" letter-spacing="8" fill="#9ca3af">
+    WORLD CUP · DATA EDITION · 1930–2022
+  </text>
+
+  <text x="600" y="115" text-anchor="middle" font-family="monospace"
+        font-size="15" letter-spacing="4" fill="#d1d5db">
+    964 MATCHES · 2,720 GOALS · 22 TOURNAMENTS
+  </text>
+
+  <!-- headline -->
+  <text x="600" y="245" text-anchor="middle" font-family="Times New Roman, Georgia, serif"
+        font-size="86" font-weight="700" fill="#111827" letter-spacing="-2">
+    The World Cup
+  </text>
+  <text x="600" y="335" text-anchor="middle" font-family="Times New Roman, Georgia, serif"
+        font-size="86" font-style="italic" fill="#111827" letter-spacing="-2">
+    You Think You Know
+  </text>
+
+  <!-- rule -->
+  <line x1="540" y1="375" x2="660" y2="375" stroke="#111827" stroke-width="2"/>
+
+  <!-- sub -->
+  <text x="600" y="420" text-anchor="middle" font-family="Times New Roman, Georgia, serif"
+        font-style="italic" font-size="24" fill="#6b7280">
+    Two chapters. Seven findings. 92 years of football, stress-tested.
+  </text>
+
+  <!-- chapter chips -->
+  <g font-family="Times New Roman, Georgia, serif">
+    <g transform="translate(420,475)">
+      <text font-size="40">📺</text>
+      <text x="60" y="20" font-size="22" font-weight="700" fill="#6b7280">The Known</text>
+      <text x="60" y="46" font-size="14" font-style="italic" fill="#9ca3af">3 confirmed facts</text>
+    </g>
+    <g transform="translate(720,475)">
+      <text font-size="40">💡</text>
+      <text x="60" y="20" font-size="22" font-weight="700" fill="#b45309">The Aha</text>
+      <text x="60" y="46" font-size="14" font-style="italic" fill="#9ca3af">4 hidden stories</text>
+    </g>
+  </g>
+
+  <!-- footer -->
+  <rect x="0" y="610" width="1200" height="20" fill="#1a1a1a"/>
+  <text x="600" y="600" text-anchor="middle" font-family="monospace" font-size="12"
+        letter-spacing="3" fill="#9ca3af">
+    PRANAYVASANI.GITHUB.IO/FIFA_WORLDCUP_FLIPBOOK
+  </text>
+</svg>
